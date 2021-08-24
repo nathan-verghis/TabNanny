@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "TabNanny",
+    "version": "1.0",
+    "description": "Clean up your tabs and optimize your browser experience",
+    "permissions": ["declarativeContent", "storage", "tabs"],
+
+    "content_scripts": [
+        {
+          "matches": [
+            "https://www.netflix.com/*", "http://www.netflix.com/*"
+          ],
+          "js": ["content.js"]
+        }
+    ],
+    "page_action": {
+      "default_icon":  {
+        "16": "images/qn16.png",
+        "32": "images/qn32.png",
+        "48": "images/qn48.png",
+        "128": "images/qn128.png"
+      },
+      "default_popup": "popup.html"
+    },
+
+    "icons": {
+      "16": "images/qn16.png",
+      "32": "images/qn32.png",
+      "48": "images/qn48.png",
+      "128": "images/qn128.png"
+    },
+
+    "background": {
+        "scripts": ["background.js"]
+    }
+}
